@@ -11,11 +11,14 @@ import Parallax from 'parallax-js';
 
 export default {
     mounted() {
-        let scene = document.querySelector('.parallax__container');
-        const parallax = new Parallax(scene, {
-            relativeInput: true,
-            hoverOnly: true
-        })
+        if( window.screen.width > 768 ) {
+            let scene = document.querySelector('.parallax__container');
+            const parallax = new Parallax(scene, {
+                relativeInput: true,
+                hoverOnly: true
+            });
+        }
+        
     }
 }
 </script>
@@ -58,7 +61,13 @@ export default {
     background-size: 100% 75%
     margin-left: -5%
     margin-top: 8%
-  
+
+@media only screen and (max-width: 768px)
+    .parallax__background    
+        background:
+            image: url('../assets/bg-m.jpg')
+            position: 60% 50%
+            size: cover
 
 
 
