@@ -180,8 +180,10 @@ section
       font:
           size: 2.5rem
           family: 'Oswald' !important
-      a
+      a, small
         text-decoration: none
+        font-family: 'Oswald' !important
+      
     @media only screen and (max-width: 1920px)
       small 
        font-size: 1.3rem
