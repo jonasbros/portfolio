@@ -1,30 +1,34 @@
 <template>
     <section>
-        <div class="first-half skills__text text-left">
+        <div class="full-width skills__container text-center">
             <h1 class="headline headline__large">What I do</h1>
             <p class="subhead">I specialize in web development, web design, responsive design, and SEO. My everyday goal is to deliver with the highest quality.</p>
+            
+            <div class="skills__list">
+                <div class="skills skill__1">
+                    <div>
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <p>Development</p>
+                </div>
+                <div class="skills skill__2">
+                    <div>
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <p>Design</p>
+                </div>
+                <div class="skills skill__3">
+                    <div>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <p>SEO</p>
+                </div>
+            </div>
         </div>
 
-        <div class="second-half skills__list copy">
-            <div class="skills skill__1">
-                <div>
-                    <i class="fab fa-html5"></i>
-                </div>
-                <p>HTML</p>
-            </div>
-            <div class="skills skill__2">
-                <div>
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-                <p>CSS/Bootstrap</p>
-            </div>
-            <div class="skills skill__3">
-                <div>
-                    <i class="fab fa-js"></i>
-                </div>
-                <p>Javascript/JQuery</p>
-            </div>
-            <div class="skills skill__4">
+        <!-- <div class="second-half skills__list copy"> -->
+            
+            <!-- <div class="skills skill__4">
                 <div>
                     <i class="fab fa-vuejs"></i>
                 </div>
@@ -86,140 +90,118 @@
                     </svg>
                 </div>
                 <p>Adobe Illustrator</p>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
         
     </section>
 </template>
 
 <style lang="sass">
+    .skills__container
+        .headline, .subhead
+            width: 80%
+            margin: -35px auto 40px
+
     .skills__list
         display: flex
         flex-flow: row wrap
-        width: 600px
+        justify-content: space-between
+        width: 60%
+        margin: 0 auto
     .skills
         position: relative
         display: inline-block
-        height: 150px
-        width: 150px
+        height: 33.33%
+        width: 33.33%
         text-align: center
-        margin: 0 18px
         p
-            max-width: 150px
+            max-width: 100%
+            margin-top: 8px
+            font:
+                size: 1.5rem
+                weight: bold
         i
             font-size: 4rem
     
-    .skill__photoshop, .skill__illustrator
-        position: relative
-        display: inline-block
-        height: 64px
-        width: 64px
-        margin-right: 5px
-        // border: 3px solid #FFF
 
-    @media only screen and (max-width: 1920px)
-        .skills__list
-            right: 12% 
-        .skills
-            i
-                font-size: 6rem
-        .skill__photoshop, .skill__illustrator
-            height: 92px
-            width: 92px
-    @media only screen and (max-width: 1600px)
-        .skills
-            i
-                font-size: 4rem 
-        .skill__photoshop, .skill__illustrator
-            height: 64px
-            width: 64px
-    @media only screen and (max-width: 1440px)
-        .skills__list
-            width: 500px
-        .skills
-            margin: 0
-    @media only screen and (max-width: 1024px)
-        .skills__list
-            display: flex
-            flex-flow: row wrap
-            width: 360px
-        .skills
-            width: 95px
-            height: 95px
-            i
-                font-size: 3rem 
-        .skill__photoshop, .skill__illustrator
-            height: 48px
-            width: 48px
+    @media only screen and (max-width: 1280px)
+        .skills__container
+            .headline, .subhead
+                width: 85%
+                margin: -35px auto 40px
     
-    @media only screen and (max-width: 768px)
-        .skills__text
-            top: 30% !important
-            left: 50% !important
-            transform: translate(-50%, -50%)
+    @media only screen and (max-width: 1024px)
+        .skills__container
+            .headline, .subhead
+                width: 80%
+                margin: -35px auto 40px
         
         .skills__list
-            width: 60%
-            top: 63% !important
-            left: 50% !important
-            transform: translate(-50%, -50%)
-            display: flex
-            justify-content: space-around
-            flex-flow: row wrap
-    @media only screen and (max-width: 720px)
-        .skills__text
-            top: 30% !important  
-        .skills__list
-            top: 50% !important
-            margin-top: 25px
-    @media only screen and (max-width: 480px)
-        .skills__text
-            top: 33% !important  
-        .skills__list
-            top: 65% !important
             width: 80%
-    @media only screen and (max-width: 414px)
-        .skills__text
-            top: 33% !important  
+
+    @media only screen and (max-width: 768px)
+        .skills__container
+            .headline, .subhead
+                width: 100%
+                margin: -35px auto 40px
+        
         .skills__list
-            top: 68% !important
-            width: 90%
+            width: 100%
+    
+    @media only screen and (max-width: 400px)
+        .full-width.skills__container
+            width: 100%
+            .headline, .subhead
+                width: 100%
+                margin: -35px auto 40px
+        
+        .skills__list
+            width: 95%
         .skills
-            width: 82px
-            height: 82px
+            p
+                font:
+                    size: 1.2rem
+                    weight: bold
             i
-                font-size: 2.5rem 
-        .skill__photoshop, .skill__illustrator
-            height: 38px
-            width: 38px
+                font-size: 4rem
     @media only screen and (max-width: 360px)
-        .skills__text .subhead
-            font-size: 1.7rem
+        .full-width.skills__container
+            width: 98%
+            .headline, .subhead
+                width: 100%
+                margin: -35px auto 40px
+        
         .skills__list
-            top: 62% !important
-            width: 82%
+            width: 95%
         .skills
-            width: 62px
-            height: 62px
+            p
+                font:
+                    size: 1.2rem
+                    weight: bold
             i
-                font-size: 2rem 
-        .skill__photoshop, .skill__illustrator
-            height: 32px
-            width: 32px
-    @media only screen and (max-width: 320px)
-        .skills__text .subhead
-            font-size: 1.7rem
+                font-size: 4rem
+        
+    @media only screen and (max-width: 360px)
+        .full-width.skills__container
+            width: 98%
+            .headline, .subhead
+                width: 100%
+                margin: -35px auto 40px
+            .headline
+                font-size: 2.4rem
+            .subhead
+                font-size: 1.8rem
+        
         .skills__list
-            top: 68% !important
-            width: 82%
+            width: 95%
         .skills
-            width: 62px
-            height: 62px
+            p
+                font:
+                    size: 1rem
+                    weight: bold
             i
-                font-size: 2rem 
-        .skill__photoshop, .skill__illustrator
-            height: 32px
-            width: 32px
+                font-size: 3rem
+        
         
 </style>
 
