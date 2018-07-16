@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <parallax />
-    <router-view/>
+    <transition name="anim__page-change" :enter-active-class="pageChangeEnterAnim" :leave-active-class="pageChangeLeaveAnim">
+      <router-view/>
+    </transition>
+    
     <navigation />
   </div>
 </template>
@@ -18,8 +21,26 @@ export default {
   data() {
     return {
       page: 1,
+      scrollDirection: 'up',
     }
   }, 
+  computed: {
+    //FADE IN DIRECTION BASED ON SCROLL DIRECTION (UP, DOWN)
+    pageChangeEnterAnim() {
+      if( this.scrollDirection == 'up' ) {
+        return 'animated fadeInLeft';
+      }else {
+        return 'animated fadeInRight';
+      }
+    },
+    pageChangeLeaveAnim() {
+      if( this.scrollDirection == 'down' ) {
+        return 'animated fadeOutLeft';
+      }else {
+        return 'animated fadeOutRight';
+      }
+    } 
+  },
   created() {
     this.$store.dispatch('getWorks');
   },
@@ -37,10 +58,12 @@ export default {
         case "up":
           // Handle Swipe Up
           this.scroller(app, 100);
+          this.scrollDirection = 'up';
           break;
         case "down":
           // Handle Swipe Down
           this.scroller(app, -100);
+          this.scrollDirection = 'down';
           break;
         case "left":
           // Handle Swipe Left
@@ -73,8 +96,10 @@ export default {
       
       if( direction > 0 ) {
         this.page++;
+        this.scrollDirection = 'down';
       }else {
         this.page--;
+        this.scrollDirection = 'up';
       }
 
       if( this.page < 1 ) {
@@ -120,6 +145,7 @@ export default {
 
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Oswald:400,700')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
 
 *
   padding: 0
