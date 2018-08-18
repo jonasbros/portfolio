@@ -18,6 +18,23 @@ export default {
     navigation,
     parallax,
   },
+  metaInfo: {
+    title: 'Jonas Perez - Web Developer',
+    meta: [
+      { hid: 'robots', name: 'robots', content: 'index, follow' },
+      { hid: 'og:site_name', name: 'og:site_name', content: 'Jonas Perez' },
+      { hid: 'description', name: 'description', content: '\'An aspiring web developer and designer looking to create things that make a difference.' },
+      { hid: 'keywords', name: 'keywords', content: 'web developer, web, Web Developer, WEB DEVELOPER, WEB, Web, photoshop, illustrator, seo, logo design, logo, programmer, php, javascript, js, developer, mysql, wordpress, vuejs, vue, vue js, DEVELOPER, Developer, Programmer, PROGRAMMER, web design, design, jquery' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Bolg — Where speech is truly free.' },
+      { hid: 'twitter:description', name: 'twitter:description', content: '\'An aspiring web developer and designer looking to create things that make a difference.' },
+      { hid: 'twitter:image', name: 'twitter:image', content: '' },
+      { hid: 'og:url', name: 'og:url', content: 'https://jonasbros.github.io/'},
+      { hid: 'og:type', name: 'og:type', content: 'website' },
+      { hid: 'og:title', name: 'og:title', content: 'Jonas Perez - Web Developer' },
+      { hid: 'og:image', name: 'og:image', content: './assets/about1.jpg' },
+    ]
+  },
   data() {
     return {
       page: 1,
