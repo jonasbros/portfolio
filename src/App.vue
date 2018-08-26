@@ -62,6 +62,11 @@ export default {
     this.$store.dispatch('getWorks');
   },
   mounted() {
+    //navtigation click event handler
+    this.$root.$on('pageNumber', (num) => {
+      this.navClickScrollDirection(num);
+    });
+
     let app = document.querySelector('#app');
     app.addEventListener('wheel', (e) => {
       this.scroller(app, null, e);
@@ -94,6 +99,14 @@ export default {
     });
   },
   methods: {
+    navClickScrollDirection(num) {
+      if( this.page < num ) {
+        this.scrollDirection = 'down';
+      }else {
+        this.scrollDirection = 'up';
+      }
+      this.page = num;
+    },
     scroller(app,  d = null, e = null) {
       //add scroll active class, execute scroll paginate
       if( app.classList.contains('scroll__active') == false ) {

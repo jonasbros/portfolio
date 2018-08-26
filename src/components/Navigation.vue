@@ -1,18 +1,17 @@
 <template>
     <nav>
         <ul>
-            <router-link to="/" tag="li"><a></a></router-link>
-            <router-link to="/skills" tag="li"><a></a></router-link>
-            <router-link to="/webdev" tag="li"><a></a></router-link>
-            <router-link to="/design" tag="li"><a></a></router-link>
-            <router-link to="/contact" tag="li"><a></a></router-link>
+            <router-link to="/" tag="li" @click.native="$root.$emit('pageNumber', 1)"><a></a></router-link>
+            <router-link to="/skills" tag="li" @click.native="$root.$emit('pageNumber', 2)"><a></a></router-link>
+            <router-link to="/webdev" tag="li" @click.native="$root.$emit('pageNumber', 3)"><a></a></router-link>
+            <router-link to="/design" tag="li" @click.native="$root.$emit('pageNumber', 4)"><a></a></router-link>
+            <router-link to="/contact" tag="li" @click.native="$root.$emit('pageNumber', 5)"><a></a></router-link>
         </ul>
     </nav>
 </template>
 
 <script>
 export default {
-    
 }
 </script>
 

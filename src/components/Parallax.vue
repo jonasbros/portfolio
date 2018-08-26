@@ -10,13 +10,35 @@
 import Parallax from 'parallax-js';
 
 export default {
+    data() {
+        return {
+            parallaxed: false,
+            parallax: null,
+        }
+    },
     mounted() {
-        if( window.screen.width > 768 ) {
+        if( window.innerWidth > 768 && this.parallaxed == false ) {
+            this.parallaxed = true;
             let scene = document.querySelector('.parallax__container');
-            const parallax = new Parallax(scene, {
+            this.parallax = new Parallax(scene, {
                 relativeInput: true,
                 hoverOnly: true
             });
+        }
+
+        window.onresize = () => {
+            if( window.innerWidth > 768 && this.parallaxed == false ) {
+                this.parallaxed = true;
+                let scene = document.querySelector('.parallax__container');
+                this.parallax = new Parallax(scene, {
+                    relativeInput: true,
+                    hoverOnly: true
+                });
+            }else if(window.innerWidth <= 768 && this.parallaxed == true) {
+                this.parallaxed = false;
+                this.parallax.destroy();
+                this.parallax = null;
+            }
         }
         
     }
@@ -68,6 +90,9 @@ export default {
             image: url('../assets/bg-m.jpg')
             position: 60% 50%
             size: cover
+    
+    .parallax__foreground, .parallax__midground 
+        display: none !important
 
 
 
