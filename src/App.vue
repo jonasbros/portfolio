@@ -99,6 +99,7 @@ export default {
     });
   },
   methods: {
+    //navigation click scroll direction
     navClickScrollDirection(num) {
       if( this.page < num ) {
         this.scrollDirection = 'down';
